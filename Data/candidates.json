@@ -1,0 +1,24 @@
+{
+  "Candidates": [
+    {
+      "name":"John Hazkar",
+      "postcode":"SW1 S2",
+      "modeOfTransport":{
+        "type":"car",
+        "speed":50
+      }
+    },
+    {
+      "name":"Jean-Michel Pasdevoiture",
+      "postcode":"SW1 S2",
+      "modeOfTransport":{
+        "type":"bike",
+        "speed":15.5
+      }
+    },
+    {
+      "name":"Juan-Miguel Nada",
+      "postcode":"SW1 S2"
+    }
+  ]
+}
