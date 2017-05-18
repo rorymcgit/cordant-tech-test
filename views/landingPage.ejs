@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <meta name="robots" content="noindex">
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
   <title>Candidate Finder</title>
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="public/css/materialize.min.css">
-  <link rel="stylesheet" href="public/css/leaflet.css">
+  <!-- <link rel="stylesheet" href="public/css/materialize.min.css"> -->
+  <!-- <link rel="stylesheet" href="public/css/leaflet.css"> -->
   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
@@ -20,7 +20,11 @@
       </div>
     </nav>
   </div>
-  <select id="dropDown"></select>
+  <form method="get" action="/">
+    <select id="dropDown"></select>
+    <input type="submit" value="Submit" />
+  </form>
+
   <script type="text/javascript" src="js/populateClientDropDown.js"></script>
 </body>
 </html>
