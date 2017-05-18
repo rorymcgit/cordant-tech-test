@@ -1,9 +1,9 @@
 
 var map;
 function addPinsOnMap(latLongs) {
-	var myIcon = L.divIcon({html: '<img height="50px" width="50px" src="public/pictures/pin.png"></img>'})
+	var myIcon = L.divIcon({html: '<img height="50px" width="50px" src="public/pictures/pin.png"></img>'});
 	for (var i = 0; i < latLongs.length; i++) {
-		latLongs[i]
+		latLongs[i];
 	  var marker2 = L.marker([latLongs[i].lat, latLongs[i].lon], {icon: myIcon}).addTo(map);
 		  marker2.bindPopup(latLongs[i].name);
 		  marker2.on('mouseover', function (e) {
@@ -26,5 +26,5 @@ $(document).ready(function() {
 	map.setView(new L.LatLng(51.4839337, -0.2549888),9);
 	map.addLayer(osm);
   map.invalidateSize();
-	addPinsOnMap([{lat:51.5494457,lon:-0.4487664,name:'Cordant Hillingdon'}])
+	addPinsOnMap([{lat:51.5494457,lon:-0.4487664,name:'Cordant Hillingdon'}]);
 });
