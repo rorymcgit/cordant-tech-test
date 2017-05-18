@@ -1,15 +1,15 @@
 const express = require("express");
 const app = express();
+var port = 3000;
 
 app.set("view engine", "ejs");
 
-app.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname));
 
 app.get("/", function(req, res) {
   res.render("landingPage");
 });
 
-
-app.listen(3000, function() {
-  console.log("Live on port 3000");
+app.listen(port, function() {
+  console.log("Live on port "+ port);
 });
