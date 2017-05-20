@@ -13,8 +13,8 @@ app.get("/", function(req, res) {
   res.render("landingPage");
 });
 
-app.post("/candidates", urlencodedParser, function(req, res) {
-  console.log(req);
+app.get("/candidates", function(req, res) {
+  res.render("candidates");
 });
 
 app.listen(port, function() {
