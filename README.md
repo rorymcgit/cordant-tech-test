@@ -18,13 +18,14 @@ I want to see a list of all candidates after choosing a client.
 
 
 VERSION 1  
-As a recruiter,  
-So that I can choose the best candidate for the job,  
-I want to see a list of all candidates sorted by proximity to client's location.  
 
 As a recruiter,  
 So that I can choose the best candidate for the job,  
 I want to see the candidates' distances from the client in the list.  
+
+As a recruiter,  
+So that I can choose the best candidate for the job,  
+I want to see a list of all candidates sorted by proximity to client's location.  
 
 As a recruiter,  
 So that I can choose the best candidate for the job,  

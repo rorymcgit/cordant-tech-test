@@ -3,18 +3,20 @@ const app = express();
 const bodyParser = require("body-parser");
 
 var port = 3000;
-var urlencodedParser = bodyParser.urlencoded({ extended: true });
 
 app.set("view engine", "ejs");
 
+app.use(bodyParser.urlencoded({  extended: true }));
 app.use(express.static(__dirname));
 
 app.get("/", function(req, res) {
   res.render("landingPage");
 });
 
-app.get("/candidates", function(req, res) {
-  res.render("candidates");
+app.post("/candidates", function(req, res) {
+  console.log(req.body);
+  console.log(req.body.client);
+  res.render("candidates", { client: req.body.client });
 });
 
 app.listen(port, function() {
