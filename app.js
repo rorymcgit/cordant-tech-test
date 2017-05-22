@@ -1,6 +1,11 @@
 require('dotenv').config();
 const API_KEY = process.env.API_KEY;
 
+const candidates = require("./data/candidates.json").Candidates;
+// console.log(candidates);
+const getCandidatePostcodes = require("./js/getCandidatePostcodes");
+
+const fs = require('fs');
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
@@ -18,9 +23,12 @@ app.get("/", function(req, res) {
 
 app.post("/candidates", function(req, res) {
   // console.log(req.body);
-  // console.log(req.body.client);
   res.render("candidates", { clientPostcode: req.body.client });
 });
+
+// console.log(getCandidatePostcodes(candidates));
+
+
 
 app.listen(port, function() {
   console.log("Live on port " + port);
