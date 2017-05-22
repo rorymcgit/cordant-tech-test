@@ -1,3 +1,6 @@
+require('dotenv').config();
+const API_KEY = process.env.API_KEY;
+
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
@@ -14,9 +17,9 @@ app.get("/", function(req, res) {
 });
 
 app.post("/candidates", function(req, res) {
-  console.log(req.body);
-  console.log(req.body.client);
-  res.render("candidates", { client: req.body.client });
+  // console.log(req.body);
+  // console.log(req.body.client);
+  res.render("candidates", { clientPostcode: req.body.client });
 });
 
 app.listen(port, function() {
