@@ -1,12 +1,3 @@
-// $(document).ready(function(body) {
-//   $.getJSON("/data/candidates.json", function(data) {
-//     $.each(data.Candidates, function(key, value) {
-//       console.log(body);
-//       $("#candidates").append($("<li></li>").html(value.name + " " + value.postcode));
-//     });
-//   });
-// });
-
 var candidates = require("../data/candidates.json");
 
 function listAllCandidates(body) {
@@ -40,7 +31,6 @@ function buildCandidatesDistances(distances, candidates) {
       });
     }
   }
-  console.log(candidatesDistances);
   return candidatesDistances;
 }
 

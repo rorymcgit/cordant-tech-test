@@ -22,15 +22,12 @@ app.get("/", function(req, res) {
 });
 
 app.post("/candidates", function(req, res) {
-  // var apiUrl = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=" + getCandidatePostcodes(candidates) + "&destinations=" + req.body.client.split(" ").join("") + "&key=" + API_KEY;
-  var apiUrl = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=" + "B421QZ|B691EQ" + "&destinations=" + req.body.client.split(" ").join("") + "&key=" + API_KEY;
-  // console.log(apiUrl);
+  var apiUrl = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=" + getCandidatePostcodes(candidates) + "&destinations=" + req.body.client.split(" ").join("") + "&key=" + API_KEY;
   request(apiUrl, function(error, response, body) {
     console.log("error:", error);
     console.log("statusCode:", response && response.statusCode);
-    console.log("body:", body);
-    listAllCandidates(body);
-    res.render("candidates", { body: body, listAllCandidates: listAllCandidates });
+    var candidatesAndDistances = listAllCandidates(body);
+    res.render("candidates", { candidates: candidatesAndDistances, client: req.body.client });
   });
 });
 

@@ -9,20 +9,33 @@
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script type="text/javascript" src="js/libs/jquery-2.1.1.min.js"></script>
-  <link rel="stylesheet" href="public/css/materialize.min.css">
   <link rel="stylesheet" href="public/css/leaflet.css">
+  <link rel="stylesheet" href="public/css/materialize.min.css">
 </head>
 <body>
   <div class="navbar-fixed">
     <nav class="red darken-4" role="navigation">
       <div class="nav-wrapper container">
-        <a id="logo-container" href="#" class="brand-logo">Nearest Candidates</a>
+        <a id="logo-container" href="#" class="brand-logo center">Candidates</a>
       </div>
     </nav>
   </div>
-  <p>
-  </p>
-  <div>All candidates:</div>
-  <div id="candidates"></div>
+  <div class="picker__header">Client location: <%= client %></div>
+  <table class="striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Distance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for (var i = 0; i < candidates.length; i++) { %>
+    <tr>
+      <td><%= candidates[i].name %></td>
+      <td><%= candidates[i].distance %></td>
+    </tr>
+    <% } %>
+  </tbody>
+  </table>
 </body>
 </html>
