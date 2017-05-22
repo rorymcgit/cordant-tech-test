@@ -3,7 +3,7 @@ $(document).ready(function() {
     $.each(data.Clients, function(key, value) {
       $("#dropDown").append($("<option></option>")
                     .attr("name", "client")
-                    .val(value.name)
+                    .val(value.postcode)
                     .html(value.name));
     });
   });

@@ -8,8 +8,8 @@
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- <link rel="stylesheet" href="public/css/materialize.min.css"> -->
-  <!-- <link rel="stylesheet" href="public/css/leaflet.css"> -->
+  <link rel="stylesheet" href="public/css/materialize.min.css">
+  <link rel="stylesheet" href="public/css/leaflet.css">
   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
@@ -20,9 +20,10 @@
       </div>
     </nav>
   </div>
-  <div>Client: <%= client %></div>
+  <div>Client Location: <%= client %></div>
   <div>All candidates:</div>
   <div id="candidates"></div>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=Washington,DC&destinations=New+York+City,NY&key=AIzaSyAt7nAicuqJYJGHerVrrakrxFrjFFhpLXg"></script>
   <script type="text/javascript" src="js/listAllCandidates.js"></script>
 </body>
 </html>
