@@ -1,15 +1,12 @@
 require('dotenv').config();
-const API_KEY = process.env.API_KEY;
-
-const candidates = require("./data/candidates.json").Candidates;
-// console.log(candidates);
-const getCandidatePostcodes = require("./js/getCandidatePostcodes");
-
-const https = require('https');
-const fs = require('fs');
-const express = require("express");
-const app = express();
-const bodyParser = require("body-parser");
+const API_KEY = process.env.API_KEY,
+      candidates = require("./data/candidates.json").Candidates,
+      getCandidatePostcodes = require("./js/getCandidatePostcodes"),
+      bodyParser = require("body-parser"),
+      request = require("request"),
+      fs = require("fs"),
+      express = require("express"),
+      app = express();
 
 var port = 3000;
 
@@ -24,20 +21,14 @@ app.get("/", function(req, res) {
 
 app.post("/candidates", function(req, res) {
   // apiUrl = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=" + getCandidatePostcodes(candidates) + "&destinations=" + req.body.client.split(" ").join("") + "&key=" + API_KEY;
-  apiUrl = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=" + "B421QZ|B421QX" + "&destinations=" + req.body.client.split(" ").join("") + "&key=" + API_KEY;
+  var apiUrl = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=" + "B421QZ|B421QX" + "&destinations=" + req.body.client.split(" ").join("") + "&key=" + API_KEY;
   // console.log(apiUrl);
-  https.get(apiUrl, function(res) {
-    // console.log('statusCode:', res.statusCode);
-    // console.log('headers:', res.headers);
-    res.on("data", function(d) {
-      apiResponse = d.toString();
-      // WRITE CALLBACK HERE TO PARSE API RESPONSE
-    });
-    }).on('error', function(e) {
-    console.error(e);
+  request(apiUrl, function(error, response, body) {
+    console.log("error:", error);
+    console.log("statusCode:", response && response.statusCode);
+    console.log("body:", body); // Print the HTML
+    res.render("candidates", { body: body });
   });
-  // console.log(req.body);
-  res.render("candidates", { clientPostcode: req.body.client });
 });
 
 app.listen(port, function() {
