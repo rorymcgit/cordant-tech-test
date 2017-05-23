@@ -38,9 +38,9 @@ I would like to improve test coverage too, there was a lot of work done in the v
 The styling on the client select page could be improved, the select dropdown doesn't fit with the initial appearance. The button is also far on the left and out of place, with no margins.  
 
 ##### Some sources I used to help me
-http://jsfiddle.net/r2PV7/
-http://stackoverflow.com/questions/18484762/populating-drop-down-with-json-object
-https://stackoverflow.com/questions/25183228/make-a-get-request-to-json-api-in-node-js
+http://jsfiddle.net/r2PV7/  
+http://stackoverflow.com/questions/18484762/populating-drop-down-with-json-object  
+https://stackoverflow.com/questions/25183228/make-a-get-request-to-json-api-in-node-js  
 http://materializecss.com/table.html
 
 ### User stories
