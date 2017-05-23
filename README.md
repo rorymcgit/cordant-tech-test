@@ -24,6 +24,10 @@ The Google Maps API was new to me, and my greatest struggle was not retrieving t
 
 I am happy with this code as it delegates to private methods to build a Javascript object, which is easy to reference in the views.  
 
+I struggled with making a get request, I used two different libraries (https and restler) before settling on requests.
+
+Ultimately I enjoyed working with materialize.css, as it has some elegant ways of displaying data - notably the table format.
+
 ## Further features
 I am a step away from sorting the candidates by distance. Currently the page displays all candidates with their relative distances, but it is unsorted. I included the API response 'value' data as well as the distance 'text' in the object sent to the view so this can be queried to sort the candidates.
 
@@ -31,7 +35,13 @@ If I had more time I would also include the candidate's mode of transports. This
 
 I would like to improve test coverage too, there was a lot of work done in the views which I found difficult to test for but the logic in listAllCandidates should be tested.  
 
-The styling on the client select page could be improved, the select dropdown doesn't fit with the initial appearance. The button is also far on the left and out of place, with no margins.   
+The styling on the client select page could be improved, the select dropdown doesn't fit with the initial appearance. The button is also far on the left and out of place, with no margins.  
+
+##### Some sources I used to help me
+http://jsfiddle.net/r2PV7/
+http://stackoverflow.com/questions/18484762/populating-drop-down-with-json-object
+https://stackoverflow.com/questions/25183228/make-a-get-request-to-json-api-in-node-js
+http://materializecss.com/table.html
 
 ### User stories
 ```
