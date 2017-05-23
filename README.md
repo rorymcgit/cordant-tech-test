@@ -9,7 +9,7 @@ Instructions for use:
 - Select desired client and click submit
 - A list of all candidates will populate, with their relative distances to the selected client
 
-![](https://github.com/rorymcgit/cordant-tech-test/candidates.png)
+![](https://github.com/rorymcgit/cordant-tech-test/blob/master/candidates.png)
 
 ## Approach
 I approached this challenge by initially understanding the structure of the existing project. I have some familiarity with Node and Express but I spent a bit of time understanding the materialize.css and leaflet.css as these were new to me. I also played about with main.js, although I didn't get ultimately get far enough to integrate maps into the platform.
