@@ -8,11 +8,11 @@ function listAllCandidates(body) {
     postcodes = apiResponse.rows;
     origin_addresses = apiResponse.origin_addresses;
   }
-  var distances = buildDistancesAndAddresses(postcodes, origin_addresses);
-  return buildCandidatesDistances(distances, allCandidates);
+  var distances = _buildDistancesAndAddresses(postcodes, origin_addresses);
+  return _buildCandidatesDistances(distances, allCandidates);
 }
 
-function buildDistancesAndAddresses(postcodes, origin_addresses) {
+function _buildDistancesAndAddresses(postcodes, origin_addresses) {
   var distances = [];
   for (var x = 0; x < postcodes.length && x < origin_addresses.length; x++) {
     distances.push([postcodes[x].elements[0].distance, origin_addresses[x]]);
@@ -20,7 +20,7 @@ function buildDistancesAndAddresses(postcodes, origin_addresses) {
   return distances;
 }
 
-function buildCandidatesDistances(distances, candidates) {
+function _buildCandidatesDistances(distances, candidates) {
   var candidatesDistances = [];
   for (var y = 0; y < distances.length; y++) {
     if (distances[y][1].toLowerCase().includes(candidates[y].postcode.toLowerCase())) {
